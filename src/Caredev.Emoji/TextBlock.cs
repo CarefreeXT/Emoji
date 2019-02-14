@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
+
+[assembly: XmlnsPrefix("http://schemas.caredev.com/wpf/emoji/2019", "emoji")]
+[assembly: XmlnsDefinition("http://schemas.caredev.com/wpf/emoji/2019", "Caredev.Emoji")]
 
 namespace Caredev.Emoji
 {
@@ -19,12 +20,23 @@ namespace Caredev.Emoji
         {
             _TextParagraph = new EmojiTextParagraphProperties(this);
             _TextSource = new EmojiTextSource(this);
+#if NET462
+            EmojiCharacter.DpiScale = VisualTreeHelper.GetDpi(this);
+#endif
         }
+
+#if NET462
+        protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
+        {
+            EmojiCharacter.DpiScale = newDpi;
+            base.OnDpiChanged(oldDpi, newDpi);
+        } 
+#endif
 
         protected override Size MeasureOverride(Size availableSize)
         {
 #if DEBUG
-            var watch = System.Diagnostics.Stopwatch.StartNew(); 
+            var watch = System.Diagnostics.Stopwatch.StartNew();
 #endif
             var size = base.MeasureOverride(availableSize);
             var length = _TextSource.Length;
@@ -66,7 +78,7 @@ namespace Caredev.Emoji
         protected override void OnRender(DrawingContext drawingContext)
         {
 #if DEBUG
-            var watch = System.Diagnostics.Stopwatch.StartNew(); 
+            var watch = System.Diagnostics.Stopwatch.StartNew();
 #endif
             base.OnRender(drawingContext);
             if (!string.IsNullOrEmpty(Text))
@@ -93,7 +105,7 @@ namespace Caredev.Emoji
             }
 #if DEBUG
             watch.Stop();
-            System.Diagnostics.Debug.WriteLine($"OnRender ElapsedTicks:{watch.ElapsedTicks},ElapsedMilliseconds:{watch.ElapsedMilliseconds}"); 
+            System.Diagnostics.Debug.WriteLine($"OnRender ElapsedTicks:{watch.ElapsedTicks},ElapsedMilliseconds:{watch.ElapsedMilliseconds}");
 #endif
         }
     }
@@ -117,8 +129,8 @@ namespace Caredev.Emoji
         static TextBlock()
         {
             TextProperty = DependencyProperty.Register(
-                "Text", 
-                typeof(string), 
+                "Text",
+                typeof(string),
                 typeof(TextBlock),
                 new FrameworkPropertyMetadata(
                     string.Empty,

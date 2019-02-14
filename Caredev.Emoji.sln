@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE4CB767-676
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{1FC82165-6710-4776-A594-59686A824470}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{2C1173AF-4666-40A1-99A9-0DC3DE9393E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caredev.Emoji.Samples", "samples\Caredev.Emoji.Samples\Caredev.Emoji.Samples.csproj", "{88B7A145-453B-47C2-9FE8-6BC83DAEB95C}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		modules\Typography\Typography.GlyphLayout\Typography.GlyphLayout.projitems*{c6807d05-09be-4313-9f8b-bd2d51c55819}*SharedItemsImports = 4
@@ -35,6 +39,10 @@ Global
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +51,7 @@ Global
 		{B9BF21B6-0443-4F71-85D0-AE10C76DE075} = {DE4CB767-6762-46F9-813B-BDD16F01B004}
 		{C6807D05-09BE-4313-9F8B-BD2D51C55819} = {1FC82165-6710-4776-A594-59686A824470}
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B} = {1FC82165-6710-4776-A594-59686A824470}
+		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C} = {2C1173AF-4666-40A1-99A9-0DC3DE9393E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B7E4A21-472C-4731-AEB8-31CEF9DF3860}

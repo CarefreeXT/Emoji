@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
 namespace Caredev.Emoji
