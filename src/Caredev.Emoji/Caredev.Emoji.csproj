@@ -2,8 +2,20 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net462</TargetFrameworks>
+    <Copyright>Copyright © 2019, CarefreeXT. All rights reserved.</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>CarefreeXT</Authors>
+    <Company>Caredev Studios</Company>
+    <PackageProjectUrl>https://github.com/CarefreeXT/Emoji</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/CarefreeXT/Emoji/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>WPF;Emoji;OpenFont;ColorFont</PackageTags>
+    <Description>This is a set of controls that display emoticon text in a WPF platform.</Description>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\..\modules\Typography\Build\N20\Typography.GlyphLayout\Typography.GlyphLayout.csproj" />
     <ProjectReference Include="..\..\modules\Typography\Build\N20\Typography.OpenFont\Typography.OpenFont.csproj" />

@@ -6,8 +6,10 @@
         xmlns:emoji="http://schemas.caredev.com/wpf/emoji/2019"
         xmlns:local="clr-namespace:Caredev.Emoji.Samples"
         mc:Ignorable="d"
-        Title="Caredev Emoji Sample" Height="450" Width="800">
+        Title="Caredev Emoji Sample" Height="359" Width="617.5">
     <Grid>
-        <emoji:TextBlock Text="aa⏩⏪⏫⏬a" FontSize="24" />
+        <emoji:TextBlock Text="😀⚽🕕⛔" HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         TextWrapping="Wrap" FontSize="96" Width="267" Margin="160,38,185.5,37.5" />
     </Grid>
 </Window>
