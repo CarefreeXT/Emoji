@@ -1,0 +1,6 @@
+[submodule "fork-typography"]
+	path = fork-typography
+	url = https://github.com/samhocevar/fork-typography.git
+[submodule "modules/Typography"]
+	path = modules/Typography
+	url = https://github.com/samhocevar/fork-typography.git
