@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caredev.Emoji", "src\Caredev.Emoji\Caredev.Emoji.csproj", "{B9BF21B6-0443-4F71-85D0-AE10C76DE075}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Typography.GlyphLayout", "modules\Typography\Build\N20\Typography.GlyphLayout\Typography.GlyphLayout.csproj", "{C6807D05-09BE-4313-9F8B-BD2D51C55819}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Typography.OpenFont", "modules\Typography\Build\N20\Typography.OpenFont\Typography.OpenFont.csproj", "{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE4CB767-6762-46F9-813B-BDD16F01B004}"
@@ -19,7 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caredev.Emoji.Samples", "sa
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		modules\Typography\Typography.GlyphLayout\Typography.GlyphLayout.projitems*{c6807d05-09be-4313-9f8b-bd2d51c55819}*SharedItemsImports = 4
 		modules\Typography\Typography.OpenFont\Typography.OpenFont.projitems*{f7d71e61-9342-4dd7-9afd-69045f2ec98b}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +28,6 @@ Global
 		{B9BF21B6-0443-4F71-85D0-AE10C76DE075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9BF21B6-0443-4F71-85D0-AE10C76DE075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9BF21B6-0443-4F71-85D0-AE10C76DE075}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6807D05-09BE-4313-9F8B-BD2D51C55819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6807D05-09BE-4313-9F8B-BD2D51C55819}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6807D05-09BE-4313-9F8B-BD2D51C55819}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6807D05-09BE-4313-9F8B-BD2D51C55819}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,7 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B9BF21B6-0443-4F71-85D0-AE10C76DE075} = {DE4CB767-6762-46F9-813B-BDD16F01B004}
-		{C6807D05-09BE-4313-9F8B-BD2D51C55819} = {1FC82165-6710-4776-A594-59686A824470}
 		{F7D71E61-9342-4DD7-9AFD-69045F2EC98B} = {1FC82165-6710-4776-A594-59686A824470}
 		{88B7A145-453B-47C2-9FE8-6BC83DAEB95C} = {2C1173AF-4666-40A1-99A9-0DC3DE9393E0}
 	EndGlobalSection

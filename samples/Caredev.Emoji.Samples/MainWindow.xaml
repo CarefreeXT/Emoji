@@ -8,8 +8,10 @@
         mc:Ignorable="d"
         Title="Caredev Emoji Sample" Height="359" Width="617.5">
     <Grid>
-        <emoji:TextBlock Text="😀⚽🕕⛔" HorizontalAlignment="Center"
+        <TextBlock Text="MV Boli" FontFamily="MV Boli" />
+        <emoji:TextBlock Text="😀⚽🕕⛔MV Boli" HorizontalAlignment="Center"
                          VerticalAlignment="Center"
-                         TextWrapping="Wrap" FontSize="96" Width="267" Margin="160,38,185.5,37.5" />
+                         TextWrapping="Wrap" FontSize="24" Width="267" 
+                         Margin="160,38,185.5,37.5" />
     </Grid>
 </Window>

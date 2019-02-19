@@ -10,13 +10,19 @@ namespace Caredev.Emoji
         internal EmojiTextRunProperties(IEmojiTextElement element)
         {
             _Element = element;
-            this.Typeface = new Typeface(element.FontFamily,
-                element.FontStyle, element.FontWeight, element.FontStretch);
+            RefreshTypeface();
+        }
+
+        internal void RefreshTypeface()
+        {
+            _Typeface = new Typeface(_Element.FontFamily,
+               _Element.FontStyle, _Element.FontWeight, _Element.FontStretch);
         }
 
         private readonly IEmojiTextElement _Element;
 
-        public override Typeface Typeface { get; }
+        public override Typeface Typeface => _Typeface;
+        private Typeface _Typeface;
 
         public override double FontRenderingEmSize => _Element.FontSize;
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
@@ -11,15 +12,18 @@ using System.Windows.Media.TextFormatting;
 
 namespace Caredev.Emoji
 {
+    [Localizability(LocalizationCategory.Text)]
     public partial class TextBlock
     {
         private readonly EmojiTextParagraphProperties _TextParagraph;
+        private readonly EmojiTextRunProperties _TextRunProperties;
         private readonly EmojiTextSource _TextSource;
 
         public TextBlock()
         {
             _TextParagraph = new EmojiTextParagraphProperties(this);
             _TextSource = new EmojiTextSource(this);
+            _TextRunProperties = (EmojiTextRunProperties)_TextSource.DefaultTextRunProperties;
 #if NET462
             EmojiCharacter.DpiScale = VisualTreeHelper.GetDpi(this);
 #endif
@@ -108,6 +112,18 @@ namespace Caredev.Emoji
             System.Diagnostics.Debug.WriteLine($"OnRender ElapsedTicks:{watch.ElapsedTicks},ElapsedMilliseconds:{watch.ElapsedMilliseconds}");
 #endif
         }
+
+        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+            if (e.Property == FontFamilyProperty
+                || e.Property == FontStyleProperty
+                || e.Property == FontWeightProperty
+                || e.Property == FontStretchProperty)
+            {
+                _TextRunProperties.RefreshTypeface();
+            }
+        }
     }
     public partial class TextBlock : FrameworkElement, IEmojiTextBlock
     {
@@ -165,6 +181,7 @@ namespace Caredev.Emoji
                     FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
         }
 
+        [Localizability(LocalizationCategory.Text)]
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
@@ -181,11 +198,14 @@ namespace Caredev.Emoji
             get { return (Brush)GetValue(BackgroundProperty); }
             set { SetValue(BackgroundProperty, value); }
         }
+        [TypeConverter(typeof(FontSizeConverter))]
+        [Localizability(LocalizationCategory.None)]
         public double FontSize
         {
             get { return (double)GetValue(FontSizeProperty); }
             set { SetValue(FontSizeProperty, value); }
         }
+        [Localizability(LocalizationCategory.Font)]
         public FontFamily FontFamily
         {
             get { return (FontFamily)GetValue(FontFamilyProperty); }
@@ -206,6 +226,7 @@ namespace Caredev.Emoji
             get { return (FontStretch)GetValue(FontStretchProperty); }
             set { SetValue(FontStretchProperty, value); }
         }
+        [TypeConverter(typeof(LengthConverter))]
         public double LineHeight
         {
             get { return (double)GetValue(LineHeightProperty); }

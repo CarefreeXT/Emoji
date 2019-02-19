@@ -17,7 +17,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\modules\Typography\Build\N20\Typography.GlyphLayout\Typography.GlyphLayout.csproj" />
     <ProjectReference Include="..\..\modules\Typography\Build\N20\Typography.OpenFont\Typography.OpenFont.csproj" />
   </ItemGroup>
 
